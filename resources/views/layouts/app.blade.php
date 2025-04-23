@@ -15,7 +15,7 @@
     </head>
 
     <body
-        class="flex min-h-screen flex-col bg-gray-50 font-sans text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-200">
+        class="flex min-h-screen flex-col font-sans text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-200">
 
         <!-- Navigation -->
         @include('layouts.navigation')

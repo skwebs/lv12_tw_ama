@@ -24,6 +24,14 @@ Route::get('/login', function () {
 
 
 
+// for test
+Route::get('/student',    fn() =>    view('page.home'))->name('student');
+Route::get('/student/admission',    fn() =>    view('page.home'))->name('student.admission');
+Route::get('/student/result', fn() => view('page.home'))->name('student.result');
+Route::get('/dashboard',    fn() =>    view('page.home'))->name('dashboard');
+Route::get('/register',    fn()    =>    view('page.home'))->name('register');
+
+
 
 // Route::get('/upload', [CropImageController::class, 'index'])->name('upload');
 // Route::post('/crop-image-upload', [CropImageController::class, 'store'])->name('crop.image.upload');

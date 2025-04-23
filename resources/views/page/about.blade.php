@@ -31,7 +31,7 @@
 
                 <!-- Right: Image -->
                 <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="{{ asset('images/school-campus.jpg') }}" alt="School Campus"
+                    <img src="https://placehold.co/600x320?text=About+Image" alt="School Campus"
                         class="h-auto w-full object-cover">
                 </div>
             </div>

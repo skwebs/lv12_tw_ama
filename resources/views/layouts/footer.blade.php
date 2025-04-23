@@ -25,14 +25,14 @@
         <div>
             <h4 class="text-md mb-2 font-semibold text-white">Quick Links</h4>
             <ul class="space-y-1 text-sm">
-                @foreach ($navLinks as $link)
+                {{-- @foreach ($navLinks as $link)
                     <li><a href="{{ route($link['route']) }}"
                             class="transition hover:text-indigo-400">{{ $link['label'] }}</a></li>
-                @endforeach
-                {{-- <li><a href="{{ route('home') }}" class="transition hover:text-indigo-400">Home</a></li>
+                @endforeach --}}
+                <li><a href="{{ route('home') }}" class="transition hover:text-indigo-400">Home</a></li>
                 <li><a href="{{ route('about') }}" class="transition hover:text-indigo-400">About Us</a></li>
                 <li><a href="{{ route('courses') }}" class="transition hover:text-indigo-400">Courses</a></li>
-                <li><a href="{{ route('contact') }}" class="transition hover:text-indigo-400">Contact</a></li> --}}
+                <li><a href="{{ route('contact') }}" class="transition hover:text-indigo-400">Contact</a></li>
             </ul>
         </div>
 

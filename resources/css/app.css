@@ -10,3 +10,10 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
         /* --breakpoint-3xl: 120rem; */
 }
+[x-cloak] {
+    display: none !important;
+}
+
+[x-collapse] {
+    will-change: max-height, opacity;
+}

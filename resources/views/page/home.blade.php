@@ -1,30 +1,5 @@
 <x-app-layout title="Welcome to AMA">
 
-    {{-- <div class="rounded-lg bg-white p-6 shadow">
-        <h1 class="mb-4 text-3xl font-bold text-gray-800">Welcome to AMA</h1>
-        <p class="mb-4 text-gray-600">
-            Discover our world-class educational programs designed to empower students.
-        </p>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div class="rounded-lg bg-blue-50 p-4">
-                <h2 class="text-xl font-semibold text-blue-600">Our Courses</h2>
-                <p class="text-gray-600">Explore a wide range of courses tailored to your needs.</p>
-                <a href="{{ url('/courses') }}" class="mt-2 inline-block text-blue-600 hover:underline">Learn More</a>
-            </div>
-            <div class="rounded-lg bg-green-50 p-4">
-                <h2 class="text-xl font-semibold text-green-600">Expert Faculty</h2>
-                <p class="text-gray-600">Learn from industry leaders and experienced educators.</p>
-                <a href="{{ url('/about') }}" class="mt-2 inline-block text-blue-600 hover:underline">Meet Our Team</a>
-            </div>
-            <div class="rounded-lg bg-yellow-50 p-4">
-                <h2 class="text-xl font-semibold text-yellow-600">Join Us</h2>
-                <p class="text-gray-600">Become part of our vibrant learning community.</p>
-                <a href="{{ url('/contact') }}" class="mt-2 inline-block text-blue-600 hover:underline">Get in Touch</a>
-            </div>
-        </div>
-    </div> --}}
-
-
     <!-- Hero Section -->
     <section class="bg-indigo-600 py-20 text-white">
         <div class="mx-auto max-w-7xl px-6 text-center">
@@ -59,7 +34,7 @@
     <section class="bg-gray-50 py-16">
         <div class="mx-auto max-w-7xl px-6 md:flex md:items-center">
             <div class="mb-8 md:mb-0 md:w-1/2">
-                <img src="{{ asset('images/about-preview.jpg') }}" alt="About Anshu Memorial Academy"
+                <img src="https://placehold.co/600x200?text=About+Image" alt="About Anshu Memorial Academy"
                     class="rounded-lg shadow-md">
             </div>
             <div class="md:w-1/2 md:pl-12">
@@ -103,6 +78,23 @@
                 </div>
             </div>
         </div>
+
+
+
+    </section>
+
+
+
+    <!-- map -->
+    <section class="md:aspect-3/2 lg:aspect-2/1 xl:aspect-7/3 my-16 aspect-square w-full bg-gray-100 sm:p-10">
+        <div>
+            <h2 class="mb-10 text-center text-3xl font-bold text-indigo-700">Find Us Here</h2>
+        </div>
+        <div class="container mx-auto h-full w-full border border-gray-300">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.6503934157327!2d85.35990715211484!3d25.74907256391992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed65dea0882835%3A0xf138a62b245e3bcb!2sAnshu+Memorial+Academy!5e0!3m2!1sen!2sin!4v1539857272951"
+                height="100%" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
     </section>
 
     <!-- Contact / CTA -->
@@ -115,6 +107,8 @@
                 class="rounded-full bg-white px-6 py-3 font-semibold text-indigo-600 hover:bg-gray-100">Contact Us</a>
         </div>
     </section>
+
+
 
 
 </x-app-layout>
