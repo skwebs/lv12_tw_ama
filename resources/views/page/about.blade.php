@@ -1,5 +1,7 @@
-<x-app-layout title="Welcome to AMA">
-
+<x-app-layout title="About Us">
+    <x-slot name="header">
+        <h1 class="mb-4 text-center text-2xl font-bold md:text-4xl">About Us</h1>
+    </x-slot>
     <section class="bg-white py-12">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center">

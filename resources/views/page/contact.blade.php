@@ -1,49 +1,4 @@
 {{-- <x-app-layout title="Contact Us">
-    <div class="rounded-lg bg-white p-6 shadow">
-        <h1 class="mb-4 text-3xl font-bold text-gray-800">Contact Us</h1>
-        <p class="mb-4 text-gray-600">
-            We would love to hear from you! Please fill out the form below to get in touch with us.
-        </p>
-
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="rounded-lg bg-blue-50 p-4">
-                <h2 class="text-xl font-semibold text-blue-600">Contact Information</h2>
-                <p class="text-gray-600">Email: 2KZoI@example.com</p>
-                <p class="text-gray-600">Phone: +1 (123) 456-7890</p>
-                <p class="text-gray-600">Address: 123 Main St, City, Country</p>
-            </div>
-            <div class="rounded-lg bg-green-50 p-4">
-                <h2 class="text-xl font-semibold text-green-600">Contact Form</h2>
-                <form>
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700">Name</label>
-                        <input type="text" id="name" name="name"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700">Email</label>
-                        <input type="email" id="email" name="email"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                            required></textarea>
-                    </div>
-                    <button type="submit"
-                        class="mt-2 inline-block rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Send
-                        Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
-
-</x-app-layout> --}}
-<x-app-layout title="Contact Us">
     <div class="mx-auto mt-6 max-w-4xl rounded-lg bg-white p-6 shadow">
         <h1 class="mb-4 text-2xl font-bold text-gray-800">Contact Us</h1>
 
@@ -97,4 +52,60 @@
         </div>
     </div>
 
+</x-app-layout> --}}
+<x-app-layout title="Contact Us">
+    <x-slot name="header">
+        <h1 class="mb-4 text-center text-3xl font-bold md:text-4xl">Contact Us</h1>
+    </x-slot>
+    <div class="mx-auto my-10 max-w-5xl rounded-2xl border-gray-200 bg-white p-8 lg:border lg:shadow-lg">
+        <h1 class="mb-2 text-3xl font-extrabold text-indigo-700">Get in Touch</h1>
+        <p class="mb-8 text-lg text-gray-600">
+            Have any questions or feedback? We'd love to hear from you!
+        </p>
+
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <!-- Contact Form -->
+            <form action="{{ route('contact') }}" method="POST" class="space-y-6">
+                @csrf
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700">Full Name</label>
+                    <input type="text" name="name" id="name" required
+                        class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 shadow-sm transition focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700">Email Address</label>
+                    <input type="email" name="email" id="email" required
+                        class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 shadow-sm transition focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-gray-700">Your Message</label>
+                    <textarea name="message" id="message" rows="5" required
+                        class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 shadow-sm transition focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    📩 Send Message
+                </button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="space-y-6 rounded-xl bg-indigo-50 p-6 shadow-inner">
+                <div>
+                    <h3 class="mb-1 text-lg font-bold text-gray-800">📍 Address</h3>
+                    <p class="text-gray-600">Bhatha Chowk, Bhatha Dasi, Rajapakar, Vaishali, Bihar</p>
+                </div>
+                <div>
+                    <h3 class="mb-1 text-lg font-bold text-gray-800">📞 Phone</h3>
+                    <p class="text-gray-600">+91-9128289100</p>
+                </div>
+                <div>
+                    <h3 class="mb-1 text-lg font-bold text-gray-800">✉️ Email</h3>
+                    <p class="text-gray-600">info@anshumemorial.in</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

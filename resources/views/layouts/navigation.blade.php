@@ -369,8 +369,8 @@
                     @endif
                 @endforeach
 
-                <!-- Mobile Profile Dropdown -->
-                <div x-data="{ open: false }" class="border-t border-gray-200 pt-2">
+                {{-- <!-- Mobile Profile Dropdown -->
+                <div x-data="{ open: false }" class="w-full border-t border-gray-200 pt-2">
                     <button @click="open = !open"
                         class="flex w-full items-center rounded px-3 py-3 text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
                         <img class="mr-2 h-6 w-6 rounded-full object-cover"
@@ -403,8 +403,124 @@
                             </a>
                         @endauth
                     </div>
-                </div>
+                </div> --}}
             </nav>
+            {{-- fill blank space  --}}
+            <div class="flex-1"></div>
+
+
+            <!-- Mobile Profile Dropdown -->
+            {{-- <div x-data="{ open: false }" class="w-full border-t border-gray-200">
+                <button @click="open = !open"
+                    class="flex w-full items-center rounded px-3 py-3 text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                    <img class="mr-2 h-6 w-6 rounded-full object-cover"
+                        src="{{ Auth::check() ? (Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('storage/images/person.png')) : asset('storage/images/person.png') }}"
+                        alt="Profile">
+                    <span>{{ Auth::check() ? Auth::user()->name : 'Guest' }}</span>
+                </button>
+                <div x-show="open" x-collapse class="ml-4 mt-1 space-y-1 overflow-hidden">
+                    @auth
+                        <div class="px-3 py-2 text-sm text-gray-700">
+                            <p class="font-medium">{{ Auth::user()->name }}</p>
+                            <p class="text-gray-500">{{ Auth::user()->email }}</p>
+                        </div>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('mobile-logout-form').submit();"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="mobile-logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Login') }}
+                        </a>
+                        <a href="{{ route('register') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Register') }}
+                        </a>
+                    @endauth
+                </div>
+            </div> --}}
+
+
+            <div x-data="{ open: false }" class="w-full border-t border-gray-200">
+                <button x-ref="button" @click="open = ! open"
+                    class="flex w-full items-center rounded px-3 py-3 text-sm font-medium text-gray-700">
+                    <img class="mr-2 h-6 w-6 rounded-full object-cover"
+                        src="{{ Auth::check() ? (Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('storage/images/person.png')) : asset('storage/images/person.png') }}"
+                        alt="Profile">
+                    <span>{{ Auth::check() ? Auth::user()->name : 'Guest' }}</span>
+                </button>
+                <div x-show="open" x-anchor="$refs.button"
+                    class="w-48 space-y-1 overflow-hidden border border-gray-200 bg-white">
+                    @auth
+                        <div class="px-3 py-2 text-sm text-gray-700">
+                            <p class="font-medium">{{ Auth::user()->name }}</p>
+                            <p class="text-gray-500">{{ Auth::user()->email }}</p>
+                        </div>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('mobile-logout-form').submit();"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="mobile-logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Login') }}
+                        </a>
+                        <a href="{{ route('register') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Register') }}
+                        </a>
+                    @endauth
+                </div>
+            </div>
+
+
+
+
+
+            {{-- <div x-data="{ open: false }" class="w-full border-t border-gray-200">
+
+                <button x-ref="button" @click="open = ! open"
+                    class="flex w-full items-center rounded px-3 py-3 text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                    <img class="mr-2 h-6 w-6 rounded-full object-cover"
+                        src="{{ Auth::check() ? (Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('storage/images/person.png')) : asset('storage/images/person.png') }}"
+                        alt="Profile">
+                    <span>{{ Auth::check() ? Auth::user()->name : 'Guest' }}</span>
+                </button>
+                <div x-show="open" x-anchor="$refs.button" class="ml-4 mt-1 space-y-1 overflow-hidden">
+                    @auth
+                        <div class="px-3 py-2 text-sm text-gray-700">
+                            <p class="font-medium">{{ Auth::user()->name }}</p>
+                            <p class="text-gray-500">{{ Auth::user()->email }}</p>
+                        </div>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('mobile-logout-form').submit();"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="mobile-logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Login') }}
+                        </a>
+                        <a href="{{ route('register') }}" @click="isOpen = false"
+                            class="block rounded px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">
+                            {{ __('Register') }}
+                        </a>
+                    @endauth
+                </div>
+            </div> --}}
         </div>
     </aside>
 
